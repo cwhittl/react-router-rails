@@ -39,7 +39,7 @@
       //ReactRouter.run(routes, location, function (Handler) {
       //  ReactDOM.render(React.createElement(Handler, data), routerNode);
       //});
-      render(<Router>{routes}</Router>, routerNode);
+      render(routes, routerNode);
     }
   };
 
