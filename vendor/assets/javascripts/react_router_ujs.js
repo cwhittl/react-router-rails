@@ -35,6 +35,8 @@
 
       var dataJson = routerNode.getAttribute(DATA_CLASS_NAME);
       var data = JSON.parse(dataJson);
+      const createBrowserHistory = require('history/lib/createBrowserHistory');
+      data["history"]=createBrowserHistory;
       ReactDOM.render(React.createElement(ReactRouter.Router,data, routes), routerNode);
     }
   };
