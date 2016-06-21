@@ -35,7 +35,7 @@
 
       var dataJson = routerNode.getAttribute(DATA_CLASS_NAME);
       var data = JSON.parse(dataJson);
-      data["history"]=ReactRouter.createBrowserHistory;
+      data["history"]=ReactRouter.HashHistory;
       console.log(data);
       ReactDOM.render(React.createElement(ReactRouter.Router,data, routes), routerNode);
     }
