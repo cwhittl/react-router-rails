@@ -40,7 +40,7 @@
       //  ReactDOM.render(React.createElement(Handler, data), routerNode);
       //});
       var Router = ReactRouter.Router;
-      ReactDOM.render(React.createElement(Router, data), routerNode);
+      ReactDOM.render(React.createElement(Router, routes), routerNode);
     }
   };
 
