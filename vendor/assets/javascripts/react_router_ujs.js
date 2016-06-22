@@ -45,9 +45,8 @@
         default:
           data["history"]=ReactRouter.hashHistory;
       }
-      
-      data["routes"]=routes;
-      ReactDOM.render(React.createElement(ReactRouter.Router,data), routerNode);
+    
+      ReactDOM.render(React.createElement(ReactRouter.Router,data,routes), routerNode);
     }
   };
 
