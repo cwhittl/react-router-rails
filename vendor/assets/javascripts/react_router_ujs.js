@@ -37,13 +37,13 @@
       console.log(ReactRouter);
       switch(locationName) {
         case "BrowserHistory":
-          data["history"]=ReactRouter.createBrowserHistory();
+          data["history"]=ReactRouter.browserHistory;
           break;
         case "MemoryHistory":
           data["history"]=ReactRouter.createMemoryHistory();
           break;
         default:
-          data["history"]=ReactRouter.createHashHistory({queryKey: false});
+          data["history"]=ReactRouter.hashHistory;
       }
       
       data["routes"]=routes;
