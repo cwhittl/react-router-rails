@@ -36,10 +36,11 @@
       var dataJson = routerNode.getAttribute(DATA_CLASS_NAME);
       var data = JSON.parse(dataJson);
       data["history"]=ReactRouter.createMemoryHistory({queryKey: false});
+      data["routes"]=routes;
       console.log(location);
       console.log(locationName);
       console.log(routerNode);
-      ReactDOM.render(React.createElement(ReactRouter.Router,data, routes), routerNode);
+      ReactDOM.render(React.createElement(ReactRouter.Router,data), routerNode);
     }
   };
 
