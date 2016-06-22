@@ -30,16 +30,22 @@
       var className = routerNode.getAttribute(ROUTER_CLASS_NAME);
       var routes = window[className] || eval.call(window, className);
 
-      var locationName = routerNode.getAttribute(LOCATION_CLASS_NAME);
-      var location = ReactRouter[locationName] ;
-
       var dataJson = routerNode.getAttribute(DATA_CLASS_NAME);
       var data = JSON.parse(dataJson);
-      data["history"]=ReactRouter.createMemoryHistory({queryKey: false});
-      //data["routes"]=routes;
-      console.log(location);
-      console.log(locationName);
-      console.log(routerNode);
+      
+      var locationName = routerNode.getAttribute(LOCATION_CLASS_NAME);
+      switch(locationName) {
+        case "BrowserHistory":
+          data["history"]=ReactRouter.createBrowserHistory();
+          break;
+        case "MemoryHistory":
+          data["history"]=ReactRouter.createMemoryHistory();
+          break;
+        default:
+          data["history"]=ReactRouter.createHashHistory({queryKey: false});
+      }
+      
+      data["routes"]=routes;
       ReactDOM.render(React.createElement(ReactRouter.Router,data), routerNode);
     }
   };
