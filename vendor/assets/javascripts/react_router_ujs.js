@@ -38,7 +38,8 @@
       data["history"]=ReactRouter.createMemoryHistory({queryKey: false});
       console.log(location);
       console.log(locationName);
-      ReactDOM.render(React.createElement(ReactRouter.Router,data, {routes}), routerNode);
+      console.log(routerNode);
+      ReactDOM.render(React.createElement(ReactRouter.Router,data, routes), routerNode);
     }
   };
 
