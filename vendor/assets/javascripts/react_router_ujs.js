@@ -34,6 +34,7 @@
       var data = JSON.parse(dataJson);
       
       var locationName = routerNode.getAttribute(LOCATION_CLASS_NAME);
+      console.log(ReactRouter);
       switch(locationName) {
         case "BrowserHistory":
           data["history"]=ReactRouter.createBrowserHistory();
